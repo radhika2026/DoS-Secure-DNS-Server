@@ -1,5 +1,5 @@
 import socket
-from primary_dns.dns_handler import MyDNSHandler
+from DNS.dns_handler import MyDNSHandler
 import dns.message
 
 class MyUDPDNSHandler(MyDNSHandler):

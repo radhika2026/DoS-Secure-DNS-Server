@@ -1,8 +1,8 @@
-# primary_dns/ssl_dns_handler.py
+# DNS/ssl_dns_handler.py
 
 import socket
 import ssl
-from primary_dns.dns_handler import MyDNSHandler
+from DNS.dns_handler import MyDNSHandler
 import dns.message
 
 class MySSLDNSHandler(MyDNSHandler):

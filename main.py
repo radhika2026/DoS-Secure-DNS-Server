@@ -1,7 +1,7 @@
 import argparse
-from primary_dns.udp_dns_handler import MyUDPDNSHandler
-from primary_dns.ssl_dns_handler import MySSLDNSHandler
-from primary_dns.https_dns_handler import MyHTTPSDNSHandler
+from DNS.udp_dns_handler import MyUDPDNSHandler
+from DNS.ssl_dns_handler import MySSLDNSHandler
+from DNS.https_dns_handler import MyHTTPSDNSHandler
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
