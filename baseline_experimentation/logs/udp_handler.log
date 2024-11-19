@@ -1,0 +1,21 @@
+2024-11-18 16:19:58,363 - INFO - DNS query received from 127.0.0.1:59228
+2024-11-18 16:19:58,363 - INFO - Received query: ns1.example.com. (A) from 127.0.0.1:59228
+2024-11-18 16:19:58,364 - INFO - Query resolved: ns1.example.com. (A) for 127.0.0.1:59228 in 0.000 seconds
+2024-11-18 16:19:58,364 - INFO - Response sent for ns1.example.com. to 127.0.0.1:59228
+2024-11-18 16:19:58,365 - INFO - Received query: www.google.com. (A) from 127.0.0.1:62198
+2024-11-18 16:19:58,382 - INFO - Query resolved: www.google.com. (A) for 127.0.0.1:62198 in 0.017 seconds
+2024-11-18 16:19:58,382 - INFO - Response sent for www.google.com. to 127.0.0.1:62198
+2024-11-18 16:19:58,383 - INFO - Received query: example.com. (SOA) from 127.0.0.1:60748
+2024-11-18 16:19:58,384 - INFO - Query resolved: example.com. (SOA) for 127.0.0.1:60748 in 0.000 seconds
+2024-11-18 16:19:58,384 - INFO - Response sent for example.com. to 127.0.0.1:60748
+2024-11-18 16:19:58,385 - INFO - DNS query received from 127.0.0.1:57560
+2024-11-18 16:19:58,385 - INFO - Received query: example.com. (IXFR) from 127.0.0.1:57560
+2024-11-18 16:19:58,400 - INFO - Query resolved: example.com. (IXFR) for 127.0.0.1:57560 in 0.016 seconds
+2024-11-18 16:19:58,401 - INFO - Zone transfer response sent for example.com. to 127.0.0.1:57560
+2024-11-18 16:19:58,404 - INFO - DNS query received from 127.0.0.1:49720
+2024-11-18 16:19:58,404 - INFO - Received query: example.com. (IXFR) from 127.0.0.1:49720
+2024-11-18 16:19:58,417 - INFO - Query resolved: example.com. (IXFR) for 127.0.0.1:49720 in 0.012 seconds
+2024-11-18 16:19:58,417 - INFO - Zone transfer response sent for example.com. to 127.0.0.1:49720
+2024-11-18 16:19:58,425 - INFO - Zone Transfer successful: example.com to 127.0.0.1:31111
+2024-11-18 16:21:31,886 - INFO - UDP DNS handler shutting down
+2024-11-18 16:21:35,331 - INFO - UDP DNS handler shutting down
