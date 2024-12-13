@@ -1,0 +1,31 @@
+digraph DNS_Gatekeeper {
+	rankdir=LR size=10
+	Start [label="Start DNS Gatekeeper" fillcolor=lightblue shape=ellipse style=filled]
+	Receive [label="Receive DNS Request" fillcolor=lightgreen shape=box style=filled]
+	Validate [label="Validate Sender IP" fillcolor=lightyellow shape=diamond style=filled]
+	Blocked [label="IP is Blocked" fillcolor=orange shape=box style=filled]
+	Process [label="Process DNS Request" fillcolor=lightgreen shape=box style=filled]
+	Forward [label="Forward Query" fillcolor=lightgreen shape=box style=filled]
+	Resolve [label="Resolve Request via Primary/Secondary" fillcolor=lightpink shape=box style=filled]
+	Ban [label="Block IP for Excessive Requests" fillcolor=orange shape=box style=filled]
+	Reset [label="Reset Request History" fillcolor=lightblue shape=box style=filled]
+	ZoneTransfer [label="Perform Zone Transfer" fillcolor=lightblue shape=box style=filled]
+	Response [label="Send Response to Client" fillcolor=lightgreen shape=box style=filled]
+	End [label="End Process" fillcolor=lightblue shape=ellipse style=filled]
+	Start -> Receive
+	Receive -> Validate
+	Validate -> Blocked [label="No (IP Blocked)"]
+	Blocked -> End
+	Validate -> Process [label="Yes (Valid IP)"]
+	Process -> Resolve [label="Is Query Local?"]
+	Resolve -> Forward [label="No (Forward Query)"]
+	Forward -> Response
+	Resolve -> Response [label="Yes (Resolve Internally)"]
+	Process -> Ban [label="Exceeds Threshold?"]
+	Ban -> End
+	Response -> End
+	End -> Reset [label=Timeout]
+	Reset -> Start
+	End -> ZoneTransfer [label=Scheduled]
+	ZoneTransfer -> Start
+}
