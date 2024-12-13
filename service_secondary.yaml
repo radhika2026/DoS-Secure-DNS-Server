@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dns-service-secondary
+  namespace: default
+spec:
+  selector:
+    app: dns-server-secondary
+  type: ClusterIP
+  ports:
+    - name: udp
+      port: 31112
+      targetPort: 31112
+      protocol: UDP

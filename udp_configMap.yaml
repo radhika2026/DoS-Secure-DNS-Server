@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: udp-services
+  namespace: kube-system
+data:
+  31110: "default/dns-gatekeeper:31110"

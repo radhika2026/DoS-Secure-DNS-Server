@@ -1,0 +1,26 @@
+FROM ubuntu:latest
+LABEL authors="rkagupta"
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Update the package list and install necessary packages
+RUN apt-get update && \
+    apt-get install -y python3 python3-pip
+
+# Copy the Python script into the container
+COPY main.py .
+
+COPY requirements.txt .
+
+COPY zones/secondary.zone ./zones/
+
+COPY keys/secondary.pem ./keys/
+
+RUN pip install --break-system-packages -r requirements.txt
+
+# Expose the port that the Python server will run on
+EXPOSE 31112
+
+# Command to run the Python server
+CMD ["python3", "main.py", "--port=31112", "--zone_file=zones/secondary.zone", "--private_key_path=keys/secondary.pem"]
